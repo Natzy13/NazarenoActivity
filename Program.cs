@@ -13,8 +13,8 @@
             Console.Write("Enter the number of subjects you are currently taking: ");
             numSub = Convert.ToInt32(Console.ReadLine());
             
-            string[] subjects = new string[numSub]; //Array for subjects
-            float[] grades = new float[numSub];     //Array for grades
+            string[] subjects = new string[numSub]; //Array for name of the subjects
+            float[] grades = new float[numSub];     //Array for grades of every subjects
 
             for (int i = 0; i < subjects.Length; i++) 
             {
@@ -37,7 +37,11 @@
                 average = (sum/(numSub*100)*100);
             }
 
-            Console.WriteLine("\nYour Final Average is: "+ average);
+            Console.WriteLine("\nYour Final Average is: "+ average.ToString("F2"));
+
+            if (average >= 75) Console.WriteLine("Student Passed!");
+            else Console.WriteLine("Student Failed!");
+
         }
     }
 }
